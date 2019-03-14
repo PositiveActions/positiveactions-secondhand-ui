@@ -1,0 +1,60 @@
+.product-container {
+  margin-top: 20px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.product-img {
+  cursor: pointer;
+}
+
+img {
+  width: 100%; }
+
+article {
+  padding: 20px;
+  // border: none;
+  border: 1px solid #999;
+  border-radius: 4px;
+  // box-shadow:
+  //   0px 1px 3px 0px rgba(0,0,0,0.2),
+  //   0px 1px 1px 0px rgba(0,0,0,0.14),
+  //   0px 2px 1px -1px rgba(0,0,0,0.12);
+  background: #fff; }
+
+a:link,
+a:visited {
+  color: black; }
+
+.mondrain {
+  margin: 8em 4em 4em 4em; }
+  .mondrain h1 {
+    margin-top: 0;
+    margin-left: 0.75rem; }
+    .mondrain h1 {
+      margin-top: 0;
+      margin-left: 0.75rem; }
+  .mondrain main {
+    /* autoprefixer: off */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-gap: 1rem; }
+  .mondrain article:nth-child(1),
+  .mondrain article:nth-child(6),
+  .mondrain article:nth-child(10) {
+    /* autoprefixer: off */
+    grid-row: span 2;
+    grid-column: span 2; }
+
+.mondrain main {
+  /* autoprefixer: off */
+  grid-auto-flow: dense; }
+
+@media screen and (max-width: 600px){
+  .mondrain
+  {
+    margin: 1em;
+  }
+}
