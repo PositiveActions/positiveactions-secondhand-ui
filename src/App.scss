@@ -45,8 +45,9 @@ a:visited {
   .mondrain article:nth-child(6),
   .mondrain article:nth-child(10) {
     /* autoprefixer: off */
-    grid-row: span 2;
-    grid-column: span 2; }
+    // grid-row: span 2;
+    grid-column: span 2;
+   }
 
 .mondrain main {
   /* autoprefixer: off */
