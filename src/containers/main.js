@@ -53,10 +53,50 @@ const mockData = [
   {
     'name': 'WEFOPJ QWEOFH',
     'summary': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime explicabo, soluta doloribus, temporibus accusamus voluptatibus. Sequi aliquid iure, iste omnis neque repellendus ullam. Autem, nisi sunt, voluptatum ipsam unde hic',
+  },
+  {
+    'name': 'PIJPFNE',
+    'summary': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime explicabo, soluta doloribus, temporibus accusamus voluptatibus. Sequi aliquid iure, iste omnis neque repellendus ullam. Autem, nisi sunt, voluptatum ipsam unde hic',
+  },
+  {
+    'name': 'fjpefj2',
+    'summary': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco'
+  },
+  {
+    'name': 'JOPIJOI',
+    'summary': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco'
+  },
+  {
+    'name': 'PIJPFNPOJEFPE',
+    'summary': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime explicabo, soluta doloribus, temporibus accusamus voluptatibus. Sequi aliquid iure, iste omnis neque repellendus ullam. Autem, nisi sunt, voluptatum ipsam unde hic',
+  },
+  {
+    'name': 'WEFOPJ QWEOFH',
+    'summary': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime explicabo, soluta doloribus, temporibus accusamus voluptatibus. Sequi aliquid iure, iste omnis neque repellendus ullam. Autem, nisi sunt, voluptatum ipsam unde hic',
+  },
+  {
+    'name': 'PIJPFNE',
+    'summary': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime explicabo, soluta doloribus, temporibus accusamus voluptatibus. Sequi aliquid iure, iste omnis neque repellendus ullam. Autem, nisi sunt, voluptatum ipsam unde hic',
+  },
+  {
+    'name': 'fjpefj2',
+    'summary': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco'
+  },
+  {
+    'name': 'JOPIJOI',
+    'summary': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco'
+  },
+  {
+    'name': 'PIJPFNPOJEFPE',
+    'summary': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime explicabo, soluta doloribus, temporibus accusamus voluptatibus. Sequi aliquid iure, iste omnis neque repellendus ullam. Autem, nisi sunt, voluptatum ipsam unde hic',
+  },
+  {
+    'name': 'WEFOPJ QWEOFH',
+    'summary': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime explicabo, soluta doloribus, temporibus accusamus voluptatibus. Sequi aliquid iure, iste omnis neque repellendus ullam. Autem, nisi sunt, voluptatum ipsam unde hic',
   }
 ];
 
-const mockImg = [ img0, img1, img2, img3, img4, img5, img6, img7, img8, img9 ];
+const mockImg = [ img0, img1, img2, img3, img4, img5, img6, img7, img8, img9, img0, img1, img2, img3, img4, img5, img6, img7, img8, img9 ];
 
 class Main extends React.Component {
   constructor() {
@@ -83,10 +123,13 @@ class Main extends React.Component {
       <div className='product-container mondrain'>
         <main>
           {mockData.map( (data,index) =>
-            <article key={index} onClick={() => {this.toggleModal(index)}}>
-              <img src={mockImg[index]}/>
-              <h3>{data.name}</h3>
-              <p>{data.summary}</p>
+            <article key={index} onClick={() => {this.toggleModal(index)}} className='photo'>
+                <span className='middle-helper'></span>
+                <img src={mockImg[index]} className='photo__img'/>
+                <div className='photo__caption'>
+                  <h3>{data.name}</h3>
+                  <p>{data.summary.length > 50 ? data.summary.slice(0, 50) : data.summary}</p>
+                </div>
               <Modal isOpen={modalOpen[index]} toggle={() => {this.toggleModal(index)}} size='lg'>
                 <ProductDetail
                   data={data}
